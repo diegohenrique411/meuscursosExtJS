@@ -1,0 +1,44 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all-dev.js"></script>
+
+</head>
+
+<body>
+	<div id="botao1"></div>
+	<div id="botao2"></div>
+	<div id="botao3"></div>
+</body>
+
+	<script type="text/javascript">
+	Ext.define('MeuBotao',{
+		extend: 'Ext.button.Button',
+		//text: 'Meu Botao',
+		//renderTo: Ext.getBody(),
+
+		initComponent: function(){ //sobrescreve os dados do botao
+			this.text = 'Meu Botao';
+
+			this.callParent();
+
+		}
+	});
+
+	Ext.onReady(function(){
+
+		Ext.create('MeuBotao',{
+			renderTo: 'botao1'
+		});
+		Ext.create('MeuBotao',{
+			renderTo: 'botao2'
+		});
+		Ext.create('MeuBotao',{
+			renderTo: 'botao3'
+		});
+
+	});
+	</script>
+
+</html>

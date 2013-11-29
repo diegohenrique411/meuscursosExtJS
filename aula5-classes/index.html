@@ -1,0 +1,47 @@
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+	<script type="text/javascript" src="../extjs/ext-all-dev.js"></script>
+
+</head>
+
+<body></body>
+
+	<script type="text/javascript">
+	Ext.onReady(function(){
+
+		Ext.define('Usuario',{
+
+			nome : '',
+			senha : '',
+			constructor : function(options){
+
+				Ext.apply(this,options || {});
+				console.log('construtor foi chamada');
+			},
+
+			login : function(){
+				console.log('Fazendo login...');
+			},
+			logout : function(){
+				console.log('Fazendo logout....');
+			}
+		},
+			function(){
+				console.log('callback foi chamado');
+			}
+		);
+		var usuario = Ext.create('Usuario',{
+			nome : 'Diego' , senha : '1234'
+		});
+
+		/*var usuario = new Usuario ({
+			nome : 'Diego' , 
+			senha : '1234'
+		}); USADO ATE EXT 3 funciona no 4 mas não é usual */
+		console.log(usuario);
+	});
+	</script>
+
+</html>
